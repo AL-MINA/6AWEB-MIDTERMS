@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { interval } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
+import { MyserviceService } from './myservice.service';
+import { NewCmpComponent } from './new-cmp/new-cmp.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule],
+  standalone: true,
+  imports: [RouterOutlet, CommonModule, NewCmpComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -33,4 +36,12 @@ export class AppComponent {
   amount = 123.45;
   company = 'mina corporation';
   purchasedOn = '2025-01-15';
+
+
+todaydate;
+componentproperty;
+constructor(private myservice:MyserviceService) {
+  this.todaydate = this.myservice.showTodayDate ()
+  this.componentproperty = this.myservice.serviceproperty;
+ }
 }
