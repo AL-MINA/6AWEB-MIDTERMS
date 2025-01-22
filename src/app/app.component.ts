@@ -9,7 +9,11 @@ import { NewCmpComponent } from './new-cmp/new-cmp.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+<<<<<<< HEAD
   imports: [RouterOutlet, CommonModule, NewCmpComponent],
+=======
+  imports: [RouterOutlet, CommonModule],
+>>>>>>> 90c2905fab5d975b69c17f31d923f400aa7e1826
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
